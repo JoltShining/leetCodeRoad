@@ -40,6 +40,13 @@ class TwoSumA:
         else:
             print('given list {} not found two item  sum is {}.'.format(self.tempList,self.target))
 
+    def twoSum(self,nums,target):
+        hash_map = dict()
+        for i,x in enumerate(nums):
+            if target - x in hash_map:
+                return [i,hash_map[target-x]]
+            hash_map[x] = i
+
 
 if __name__ == '__main__':
 
@@ -52,6 +59,7 @@ if __name__ == '__main__':
     twosumB = TwoSumA(tempList,targetB)
     indexList = twosumB.findIndex()
     twosumB.printIndex(indexList)
+    print (twosum.twoSum(tempList,targetA))
 
             
         
